@@ -3,7 +3,7 @@ let money, time, cost, articleExpense;
 money = prompt('Ваш бюджет на месяц?');
 time = prompt('Введите дату в формате YYYY-MM-DD');
 articleExpense = prompt('Введите обязательную статью расходов');
-cost = prompt('Во сколько обойдется?');
+cost = prompt('Во сколько обойдется эта статья расходов?');
 
 
 let appData = {
