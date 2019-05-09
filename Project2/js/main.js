@@ -21,9 +21,19 @@ const startBtn = document.getElementById('start'),
       percentValue = document.querySelector('.choose-percent'),
       year = document.querySelector('.year-value'),
       month = document.querySelector('.month-value'),
-      day = document.querySelector('.day-value');
+      day = document.querySelector('.day-value'),
+      buttons = document.getElementsByTagName('button');
       
-let money, time, cost, articleExpense, moneyPerDay, optExpens; 
+let money, time, cost, articleExpense, moneyPerDay, optExpens;
+
+document.addEventListener('DOMContentLoaded', function() {
+    for(let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = true;
+        if (buttons[i].id = 'start') {
+            buttons[i].disabled = false;
+        }
+    }
+});
 
 startBtn.addEventListener('click', function() {
     time = prompt('Введите дату в формате YYYY-MM-DD'); 
@@ -73,7 +83,7 @@ optExpensesBtn.addEventListener('click', () => {
 
 countBudgetBtn.addEventListener('click', () => {
     if (appData.budget != undefined) {
-        appData.moneyPerDay = (appData.budget/30).toFixed(2);
+        appData.moneyPerDay = ((appData.budget - +expenses.textContent)/30).toFixed(2);
         dayBudget.textContent = appData.moneyPerDay;
         
         if (appData.moneyPerDay <= 100) {
