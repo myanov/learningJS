@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    info.addEventListener('click', function(event) {
+    info.addEventListener('click', (event) => {
         let target = event.target;
         if(target && target.classList.contains('info-header-tab')) {
             for (let i = 0; i < tab.length; i++) {
@@ -33,7 +33,7 @@ window.addEventListener('DOMContentLoaded', function() {
     });
 
     tabContent.forEach(function(content) {
-        content.addEventListener('click', function(event) {
+        content.addEventListener('click', (event) => {
             let target = event.target;
             if (target && target.classList.contains('description-btn')) {
                 modalWindow.style.display = 'block';
@@ -110,7 +110,7 @@ window.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = 'hidden';
     });
 
-    closeModal.addEventListener('click', function() {
+    closeModal.addEventListener('click', () => {
         modalWindow.style.display = 'none';
         moreBtn.classList.remove('more-splash');
         document.body.style.overflow = '';
